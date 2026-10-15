@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Início | Alagoas{% endblock %}
+
+{% block content %}
+
+<h1 title="inicio">Enchentes Urbanas: Para Onde Vai A Água Da Chuva?</h1>
+<p>Como parte do projeto para a feira de ciências da escola estadual Dom Constantino Luers, os alunos do 1º ano "D" vespertino elaboraram um mapa iterativo afim de facilitar a compreensão do tema.<br>Clique em um município e descubra os principais relatos e notícias sobre enchentes e alagamentos.</p>
+
+<div id="mapa" style="height: 550px; width: 100%; background: transparent;"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    const mapa = L.map('mapa');
+
+    fetch("{% static 'mapa/municipios.geojson' %}")
+        .then(resposta => {
+            if (!resposta.ok) {
+                throw new Error('Não foi possível encontrar o arquivo GeoJSON.');
+            }
+            return resposta.json();
+        })
+        .then(dados => {
+            const municipios = L.geoJSON(dados, {
+                style: {
+                    color: '#ffffff',
+                    weight: 1,
+                    fillColor: '#8FB5ED',
+                    fillOpacity: 0.9
+                }
+            }).addTo(mapa);
+
+            mapa.fitBounds(municipios.getBounds());
+        })
+        .catch(erro => {
+            console.error('Erro ao carregar municípios:', erro);
+            document.getElementById('mapa').innerText =
+                'Não foi possível carregar o mapa dos municípios.';
+        });
+</script>
+
+{% endblock %}
