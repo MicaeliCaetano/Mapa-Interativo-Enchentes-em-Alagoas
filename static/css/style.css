@@ -3,6 +3,10 @@
 }
 
 
+body {
+    margin: 0;
+}
+
 header {
     background-color: rgb(6, 24, 58);
     height: 250px;
