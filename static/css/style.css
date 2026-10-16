@@ -21,7 +21,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 50px;
- }
+}
 
 
 footer {
@@ -45,6 +45,9 @@ footer {
 footer * {
     font-weight: 150;
     margin: 0;
+}
+footer h1 {
+    font-size: 50px;
 }
 
 
