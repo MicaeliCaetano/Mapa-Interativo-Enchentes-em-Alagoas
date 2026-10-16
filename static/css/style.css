@@ -55,6 +55,7 @@ h1[title="inicio"] {
 @media (max-width: 600px) {
     h1[title="inicio"] {
         margin-inline: 25px;
+        font-weight: 200;
     }
 }
 
@@ -73,6 +74,6 @@ p[title="inicio"] {
 @media (max-width: 600px) {
     h1{
         font-weight: 300;
-        font-size: 28px;
+        font-size: 20px;
     }
 }
