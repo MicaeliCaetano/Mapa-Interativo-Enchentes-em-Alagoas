@@ -22,6 +22,12 @@ header h1 {
     margin: 0;
     font-size: 50px;
 }
+@media (max-width: 600px) {
+    header h1 {
+        font-weight: 300;
+        font-size: 30px;
+    }
+}
 
 
 footer {
@@ -49,6 +55,12 @@ footer * {
 footer h1 {
     font-size: 30px;
 }
+@media (max-width: 600px) {
+    footer h1 {
+        font-weight: 300;
+        font-size: 15px;
+    }
+}
 
 
 h1[title="inicio"] {
@@ -75,9 +87,3 @@ p[title="inicio"] {
 }
 
 
-@media (max-width: 600px) {
-    h1[title="cabecalhoRodaPe"]{
-        font-weight: 300;
-        font-size: 30px;
-    }
-}
