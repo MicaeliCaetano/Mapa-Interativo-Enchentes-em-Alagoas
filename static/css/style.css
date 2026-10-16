@@ -49,7 +49,7 @@ footer * {
 
 
 h1[title="inicio"] {
-    font-weight: 150;
+    font-weight: 100;
     margin-inline: 75px;
 }
 @media (max-width: 600px) {
@@ -74,6 +74,6 @@ p[title="inicio"] {
 @media (max-width: 600px) {
     h1[title="cabecalhoRodaPe"]{
         font-weight: 300;
-        font-size: 15px;
+        font-size: 30px;
     }
 }
