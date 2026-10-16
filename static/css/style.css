@@ -42,10 +42,20 @@ h1[title="inicio"] {
     font-weight: 150;
     margin-inline: 75px;
 }
+@media (max-width: 600px) {
+    h1[title="inicio"] {
+        margin-inline: 8px;
+    }
+}
 
 
 p[title="inicio"] {
     margin-inline: 100px;
+}
+@media (max-width: 600px) {
+    p[title="inicio"] {
+        margin-inline: 6px;
+    }
 }
 
 
