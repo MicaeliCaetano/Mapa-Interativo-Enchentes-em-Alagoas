@@ -11,6 +11,11 @@ header {
     background-color: rgb(6, 24, 58);
     height: 250px;
 }
+@media (max-width: 600px) {
+    header {
+        height: 150px;
+    }
+}
 
 
 header h1 {
@@ -29,6 +34,11 @@ footer {
     align-items: center;
     text-align: center;
     color:aliceblue;
+}
+@media (max-width: 600px) {
+    footer {
+        height: 150px;
+    }
 }
 
 
