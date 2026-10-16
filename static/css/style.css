@@ -44,23 +44,25 @@ h1[title="inicio"] {
 }
 @media (max-width: 600px) {
     h1[title="inicio"] {
-        margin-inline: 8px;
+        margin-inline: 25px;
     }
 }
 
 
 p[title="inicio"] {
     margin-inline: 100px;
+    color:rgb(10, 31, 61);
 }
 @media (max-width: 600px) {
     p[title="inicio"] {
-        margin-inline: 6px;
+        margin-inline: 50px;
     }
 }
 
 
 @media (max-width: 600px) {
     h1{
+        font-weight: 200;
         font-size: 28px;
     }
 }
