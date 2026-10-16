@@ -37,4 +37,9 @@ footer * {
 
 h1[title="inicio"] {
     font-weight: 150;
+    margin-inline: 75px;
+}
+
+p[title="inicio"] {
+    margin-inline: 100px;
 }
