@@ -164,7 +164,7 @@ footer h1 {
         margin-inline: 20px; /* Margem reduzida para não esmagar o texto */
         font-weight: 300;
         font-size: 22px;
-        margin-top: 30px;
+        margin-top: 50px;
     }
 
     /* Correção do Parágrafo P no Celular */
@@ -195,7 +195,7 @@ footer h1 {
     }
     
     footer img {
-        width: 15px:
+        width: 15px;
     }
     
     .contato-footer h3 {
