@@ -42,9 +42,26 @@
                     fillColor: '#8FB5ED',
                     fillOpacity: 0.9
                 },
-            
                 onEachFeature: function (feature, camada) {
+                    const propriedades = feature.properties || {};
+
+                    const nomeMunicipio =
+                        propriedades.NM_MUN ||
+                        propriedades.NM_MUNICIPIO ||
+                        propriedades.name ||
+                        propriedades.NAME_2;
+
+                    if (nomeMunicipio) {
+                        camada.bindTooltip(nomeMunicipio, {
+                            permanent: true,
+                            direction: 'center',
+                            className: 'nome-municipio',
+                            opacity: 1
+                        });
+                    }
+                    
                     camada.on('click', function () {
+                    
                         const areaInformacoes = document.getElementById(
                             'informacoes-municipios'
                         );
