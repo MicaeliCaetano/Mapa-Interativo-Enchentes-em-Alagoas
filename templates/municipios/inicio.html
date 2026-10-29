@@ -10,6 +10,11 @@
 
 <div id="mapa" style="height: 550px; width: 100%; background: transparent;"></div>
 
+<div id="Informacoes-municipios">
+    <h2>Dados de toda Alagoas</h2>
+    <p>dados iniciais</p>
+</div>
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
@@ -32,6 +37,12 @@
                     weight: 1,
                     fillColor: '#8FB5ED',
                     fillOpacity: 0.9
+                },
+            
+                onEachFeature: function (feature, camada) {
+                    camada.on('click', function () {
+                        console.log(feature.properties);
+                    });
                 }
             }).addTo(mapa);
 
