@@ -68,6 +68,7 @@ p[title="inicio"] {
     border-radius: 15px;
     overflow: hidden;
     box-sizing: border-box;
+    background-color: aliceblue;
 }
 
 #informacoes-municipios {
