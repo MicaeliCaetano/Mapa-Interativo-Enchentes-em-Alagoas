@@ -52,11 +52,19 @@
                         propriedades.NAME_2;
 
                     if (nomeMunicipio) {
+                        
+                        const limites = camada.getBounds();
+                        const tamanhoMunicipio =
+                            (limites.getNorth() - limites.getSouth()) *
+                            (limites.getEast() - limites.getWest());
+                        
+                        camada._tamanhoMunicipio = tamanhoMunicipio;
+
                         camada.bindTooltip(nomeMunicipio, {
                             permanent: true,
                             direction: 'center',
                             className: 'nome-municipio',
-                            opacity: 1
+                            opacity: 0
                         });
                     }
                     
@@ -112,8 +120,58 @@
                 }
 
             }).addTo(mapa);
+            
+            const camadasOrdenadas = [];
+
+            municipios.eachLayer(function (camada) {
+                camadasOrdenadas.push(camada);
+            });
+            
+            camadasOrdenadas.sort(function (a, b) {
+                return b._tamanhoMunicipio - a._tamanhoMunicipio;
+            });
+            
+            function atualizarNomes() {
+                
+                const zoom = mapa.getZoom();
+
+                const total = camadasOrdenadas.length;
+                let quantidade;
+                
+                if (zoom <= 7) {
+                    quantidade = Math.ceil(total * 0.15);
+                
+                } else if (zoom === 8) {
+                    quantidade = Math.ceil(total * 0.35);
+
+                } else if (zoom === 9) {
+                    quantidade = Math.ceil(total * 0.60);
+                
+                } else {
+                    quantidade = total;
+                }
+
+
+            camadasOrdenadas.forEach(function (camada, indice) {
+                const tooltip = camada.getTooltip();
+                if (!tooltip) {
+                    return;
+                }
+
+                if (indice < quantidade) {
+                    tooltip.setOpacity(1);
+                } else {
+                    tooltip.setOpacity(0);
+                }
+            });
+}
+
+            mapa.on('zoomend', atualizarNomes);
+
 
             mapa.fitBounds(municipios.getBounds());
+
+            atualizarNomes();
         })
         .catch(erro => {
             console.error('Erro ao carregar municípios:', erro);
