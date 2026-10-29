@@ -46,7 +46,7 @@
                 onEachFeature: function (feature, camada) {
                     camada.on('click', function () {
                         const areaInformacoes = document.getElementById(
-                            'Informacoes-municipios'
+                            'informacoes-municipios'
                         );
                         
                         const textosCarregados = document.getElementById(
@@ -93,7 +93,7 @@
                         }
                     });
                 }
-                
+
             }).addTo(mapa);
 
             mapa.fitBounds(municipios.getBounds());
