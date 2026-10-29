@@ -62,7 +62,11 @@ header h3 {
     }
     
     #mapa {
-        height: 450px;
+        height: 300px;
+        margin-inline: 40px;
+    }
+
+    p[title="inicio"] {
         margin-inline: 40px;
     }
 }
@@ -117,11 +121,6 @@ p[title="inicio"] {
     margin-inline: 100px;
     color:rgb(10, 31, 61);
 }
-@media (max-width: 600px) {
-    p[title="inicio"] {
-        margin-inline: 40px;
-    }
-}
 
 #mapa {
     height: 550px;
@@ -129,15 +128,20 @@ p[title="inicio"] {
     border: 2px solid rgb(6, 24, 58);
     border-radius: 15px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .nome-municipio {
     font-size: 8px;
     font-weight: 500;
     color: #24344d;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
     padding: 0;
     white-space: nowrap;
+}
+
+.nome-municipio::before {
+    display: none;
 }
