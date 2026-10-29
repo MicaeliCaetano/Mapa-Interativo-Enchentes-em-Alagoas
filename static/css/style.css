@@ -48,13 +48,16 @@ header h3 {
    CONFIGURAÇÕES PARA TELAS GRANDES (DESKTOP)
    ========================================================================== */
 
-h1[title="inicio"] {
+h1[title="inicio"],
+#informacoes-municipios h2 {
     font-weight: 100;
     margin-inline: 75px;
     font-size: 30px;
+    margin-top: 60px;
 }
 
-p[title="inicio"] {
+p[title="inicio"],
+#informacoes-municipios p {
     margin-inline: 100px;
     color: rgb(10, 31, 61);
     font-size: 16px;
@@ -135,22 +138,25 @@ footer {
     }
     
     /* Correção do Título Inicial no Celular */
-    h1[title="inicio"] {
+    h1[title="inicio"],
+    #informacoes-municipios h2 {
         margin-inline: 20px; /* Margem reduzida para não esmagar o texto */
         font-weight: 300;
         font-size: 22px;
+        margin-top: 30px;
     }
 
     /* Correção do Parágrafo P no Celular */
-    p[title="inicio"] {
-        margin-inline: 40px; /* Reduzido de 100px para 20px para caber na tela */
+    p[title="inicio"],
+    #informacoes-municipios p {
+        margin-inline: 25px; /* Reduzido de 100px para 20px para caber na tela */
         font-size: 14px;
     }
     
     /* Correção do Mapa no Celular */
     #mapa {
         height: 350px;
-        margin-inline: 40px; /* Reduzido de 100px para 20px para dar espaço ao mapa */
+        margin-inline: 25px; /* Reduzido de 100px para 20px para dar espaço ao mapa */
     }
 
     /* Correção da Área de Informações dos Municípios no Celular */
