@@ -136,6 +136,10 @@ footer h1 {
     display: none;
 }
 
+#informacoes-municipios {
+    margin-bottom: 80px;
+}
+
 
 /* ==========================================================================
    RESPONSIVIDADE: CONFIGURAÇÕES PARA CELULAR (MÁXIMO 600PX)
@@ -220,5 +224,9 @@ footer h1 {
     .contato-footer a {
         font-size: 11px;
         margin: 0;
+    }
+    
+    #informacoes-municipios {
+        margin-bottom: 50px;
     }
 }
