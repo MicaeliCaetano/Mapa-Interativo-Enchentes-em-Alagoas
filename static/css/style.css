@@ -44,6 +44,29 @@ header h3 {
     line-height: 1.2;
 }
 
+@media (max-width: 600px) {
+    header {
+        height: 85px;
+    }
+
+    header div {
+        margin-left: 8px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header h3 {
+        font-size: 12px;
+    }
+    
+    #mapa {
+        height: 450px;
+        margin-inline: 40px;
+    }
+}
+
 footer {
     background-color: rgb(6, 24, 58);
     height: 250px;
@@ -96,8 +119,16 @@ p[title="inicio"] {
 }
 @media (max-width: 600px) {
     p[title="inicio"] {
-        margin-inline: 50px;
+        margin-inline: 40px;
     }
+}
+
+#mapa {
+    height: 550px;
+    margin-inline: 100px;
+    border: 2px solid rgb(6, 24, 58);
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .nome-municipio {
