@@ -10,9 +10,13 @@
 
 <div id="mapa" style="height: 550px; width: 100%; background: transparent;"></div>
 
-<div id="Informacoes-municipios">
+<div id="informacoes-municipios">
     <h2>Dados de toda Alagoas</h2>
     <p>dados iniciais</p>
+</div>
+
+<div id="textos-carregados" hidden>
+    {{ textos_municipios|safe }}
 </div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -41,9 +45,55 @@
             
                 onEachFeature: function (feature, camada) {
                     camada.on('click', function () {
-                        console.log(feature.properties);
+                        const areaInformacoes = document.getElementById(
+                            'Informacoes-municipios'
+                        );
+                        
+                        const textosCarregados = document.getElementById(
+                            'textos-carregados'
+                        );
+                        
+                        const propriedades = feature.properties || {};
+                        const nomeMunicipio =
+                        propriedades.NM_MUN ||
+                        propriedades.NM_MUNICIPIO ||
+                        propriedades.name ||
+                        propriedades.NAME_2;
+                        
+                        function normalizarNome(nome) {
+                            return (nome || '')
+                            .normalize('NFD')
+                            .replace(/[\u0300-\u036f]/g, '')
+                            .trim()
+                            .toLowerCase();
+                        }
+                        
+                        const textos = textosCarregados.querySelectorAll(
+                            '[data-municipio]'
+                        );
+                        
+                        let textoEncontrado = null;
+                        
+                        textos.forEach(function (texto) {
+                            if (
+                                normalizarNome(texto.dataset.municipio) ===
+                                normalizarNome(nomeMunicipio)
+                            ) {
+                                textoEncontrado = texto;
+                            }
+                        });
+                        
+                        if (!textoEncontrado) {
+                            textoEncontrado = textosCarregados.querySelector(
+                                '[data-municipio="padrao"]'
+                            );
+                        }
+                        if (textoEncontrado) {
+                            areaInformacoes.innerHTML = textoEncontrado.innerHTML;
+                        }
                     });
                 }
+                
             }).addTo(mapa);
 
             mapa.fitBounds(municipios.getBounds());
