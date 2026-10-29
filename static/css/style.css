@@ -44,6 +44,66 @@ header h3 {
     line-height: 1.2;
 }
 
+/* ==========================================================================
+   CONFIGURAÇÕES PARA TELAS GRANDES (DESKTOP)
+   ========================================================================== */
+
+h1[title="inicio"] {
+    font-weight: 100;
+    margin-inline: 75px;
+    font-size: 30px;
+}
+
+p[title="inicio"] {
+    margin-inline: 100px;
+    color: rgb(10, 31, 61);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#mapa {
+    height: 550px;
+    margin-inline: 100px;
+    border: 2px solid rgb(6, 24, 58);
+    border-radius: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#informacoes-municipios {
+    margin-inline: 100px;
+    margin-block: 30px;
+}
+
+footer * {
+    font-weight: 150;
+    margin: 0;
+}
+
+footer h1 {
+    font-size: 30px;
+}
+
+.nome-municipio {
+    font-size: 8px;
+    font-weight: 500;
+    color: #24344d;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.nome-municipio::before {
+    display: none;
+}
+
+
+/* ==========================================================================
+   RESPONSIVIDADE: CONFIGURAÇÕES PARA CELULAR (MÁXIMO 600PX)
+   ========================================================================== */
+
 @media (max-width: 600px) {
     header {
         height: 85px;
@@ -61,97 +121,38 @@ header h3 {
         font-size: 12px;
     }
     
+    /* Correção do Título Inicial no Celular */
+    h1[title="inicio"] {
+        margin-inline: 20px; /* Margem reduzida para não esmagar o texto */
+        font-weight: 300;
+        font-size: 22px;
+    }
+
+    /* Correção do Parágrafo P no Celular */
+    p[title="inicio"] {
+        margin-inline: 20px; /* Reduzido de 100px para 20px para caber na tela */
+        font-size: 14px;
+    }
+    
+    /* Correção do Mapa no Celular */
     #mapa {
-        height: 300px;
-        margin-inline: 40px;
+        height: 350px;
+        margin-inline: 20px; /* Reduzido de 100px para 20px para dar espaço ao mapa */
+    }
+
+    /* Correção da Área de Informações dos Municípios no Celular */
+    #informacoes-municipios {
+        margin-inline: 20px;
     }
     
     footer {
-        height: 150px;
+        height: auto;
+        padding: 30px 15px;
     }
 
     footer h1 {
         font-weight: 300;
-        font-size: 15px;
+        font-size: 16px;
+        line-height: 1.3;
     }
-
-    h1[title="inicio"] {
-        margin-inline: 25px;
-        font-weight: 200;
-    }
-}
-
-footer {
-    background-color: rgb(6, 24, 58);
-    height: 250px;
-    display: flex;
-    padding: 20px 12px;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color:aliceblue;
-}
-@media (max-width: 600px) {
-    footer {
-        height: 150px;
-    }
-}
-
-
-footer * {
-    font-weight: 150;
-    margin: 0;
-}
-footer h1 {
-    font-size: 30px;
-}
-@media (max-width: 600px) {
-    footer h1 {
-        font-weight: 300;
-        font-size: 15px;
-    }
-}
-
-
-h1[title="inicio"] {
-    font-weight: 100;
-    margin-inline: 75px;
-    font-size: 30px;
-}
-@media (max-width: 600px) {
-    h1[title="inicio"] {
-        margin-inline: 25px;
-        font-weight: 200;
-    }
-}
-
-
-p[title="inicio"] {
-    margin-inline: 100px;
-    color:rgb(10, 31, 61);
-}
-
-#mapa {
-    height: 550px;
-    margin-inline: 100px;
-    border: 2px solid rgb(6, 24, 58);
-    border-radius: 15px;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.nome-municipio {
-    font-size: 8px;
-    font-weight: 500;
-    color: #24344d;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0;
-    white-space: nowrap;
-}
-
-.nome-municipio::before {
-    display: none;
 }
