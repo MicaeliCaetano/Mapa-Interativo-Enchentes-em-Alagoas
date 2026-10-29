@@ -86,4 +86,13 @@ p[title="inicio"] {
     }
 }
 
-
+.nome-municipio {
+    font-size: 8px;
+    font-weight: 500;
+    color: #24344d;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    white-space: nowrap;
+}
