@@ -65,9 +65,19 @@ header h3 {
         height: 300px;
         margin-inline: 40px;
     }
+    
+    footer {
+        height: 150px;
+    }
 
-    p[title="inicio"] {
-        margin-inline: 40px;
+    footer h1 {
+        font-weight: 300;
+        font-size: 15px;
+    }
+
+    h1[title="inicio"] {
+        margin-inline: 25px;
+        font-weight: 200;
     }
 }
 
