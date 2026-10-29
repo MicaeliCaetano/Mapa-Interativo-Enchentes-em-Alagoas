@@ -143,14 +143,14 @@ footer {
 
     /* Correção do Parágrafo P no Celular */
     p[title="inicio"] {
-        margin-inline: 20px; /* Reduzido de 100px para 20px para caber na tela */
+        margin-inline: 40px; /* Reduzido de 100px para 20px para caber na tela */
         font-size: 14px;
     }
     
     /* Correção do Mapa no Celular */
     #mapa {
         height: 350px;
-        margin-inline: 20px; /* Reduzido de 100px para 20px para dar espaço ao mapa */
+        margin-inline: 40px; /* Reduzido de 100px para 20px para dar espaço ao mapa */
     }
 
     /* Correção da Área de Informações dos Municípios no Celular */
