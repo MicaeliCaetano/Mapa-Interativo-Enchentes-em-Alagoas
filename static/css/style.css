@@ -76,7 +76,7 @@ p[title="inicio"],
 
 footer {
     background-color: rgb(6, 24, 58);
-    height: 250px;
+    height: 150px;
     display: flex;
     padding: 20px 12px;
     justify-content: space-around;
@@ -115,6 +115,9 @@ footer h1 {
 .contato-footer a {
     color: aliceblue;
     text-decoration: none;
+}
+footer img {
+    width: 100px;
 }
 
 .nome-municipio {
@@ -190,7 +193,7 @@ footer h1 {
         gap: 8px;
     }
     
-    .contato-footer img {
+    footer img {
         width: 30px;
         height: 30px;
     }
